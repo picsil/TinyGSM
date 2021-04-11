@@ -700,4 +700,4 @@ class TinyGsmBG96 : public TinyGsmModem<TinyGsmBG96>,
   const char*    gsmNL = GSM_NL;
 };
 
-#endif  // SRC_TINYGSMCLIENTBG96_H_
+#endif  // SRC_TINYGSMCLIENTSKYWIREBG96_H_
