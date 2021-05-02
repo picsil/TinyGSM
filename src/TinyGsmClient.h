@@ -72,6 +72,12 @@ typedef TinyGsmSkywireBG96                              TinyGsm;
 typedef TinyGsmSkywireBG96::GsmClientSkywireBG96        TinyGsmClient;
 typedef TinyGsmSkywireBG96::GsmClientSecureSkywireBG96  TinyGsmClientSecure;
 
+#elif defined(TINY_GSM_MODEM_SKYWIRE_NANO)
+#include "TinyGsmClientSkywireNano.h"
+typedef TinyGsmSkywireNano                              TinyGsm;
+typedef TinyGsmSkywireNano::GsmClientSkywireNano        TinyGsmClient;
+typedef TinyGsmSkywireNano::GsmClientSecureSkywireNano  TinyGsmClientSecure;
+
 #elif defined(TINY_GSM_MODEM_A6) || defined(TINY_GSM_MODEM_A7)
 #include "TinyGsmClientA6.h"
 typedef TinyGsmA6              TinyGsm;

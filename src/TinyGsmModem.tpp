@@ -26,8 +26,8 @@ class TinyGsmModem {
   template <typename... Args>
   inline void sendAT(Args... cmd) {
     thisModem().streamWrite("AT", cmd..., thisModem().gsmNL);
-    thisModem().stream.flush();
-    TINY_GSM_YIELD(); /* DBG("### AT:", cmd...); */
+    thisModem().stream.flush(); 
+    TINY_GSM_YIELD(); DBG("### AT:", cmd...); 
   }
   void setBaud(uint32_t baud) {
     thisModem().setBaudImpl(baud);
@@ -206,9 +206,10 @@ class TinyGsmModem {
   }
 
   // Gets signal quality report according to 3GPP TS command AT+CSQ
+  // picsil: modified to use +CESQ instead
   int8_t getSignalQualityImpl() {
-    thisModem().sendAT(GF("+CSQ"));
-    if (thisModem().waitResponse(GF("+CSQ:")) != 1) { return 99; }
+    thisModem().sendAT(GF("+CESQ"));
+    if (thisModem().waitResponse(GF("+CESQ:")) != 1) { return 99; }
     int8_t res = thisModem().streamGetIntBefore(',');
     thisModem().waitResponse();
     return res;
