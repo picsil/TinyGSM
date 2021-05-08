@@ -10,7 +10,7 @@
 #define SRC_TINYGSMCLIENTSKYWIREBG96_H_
 // #pragma message("TinyGSM:  TinyGsmClientSkywireBG96")
 
-#define TINY_GSM_DEBUG Serial
+//#define TINY_GSM_DEBUG Serial
 
 #define TINY_GSM_MUX_COUNT 12
 #define TINY_GSM_BUFFER_READ_AND_CHECK_SIZE
